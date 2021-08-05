@@ -1,0 +1,98 @@
+.container {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+  .radio-div{
+    max-width: 310px;
+    margin-right: auto;
+    margin-left: auto;
+}
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+  .outer {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 150px !important; /* any size */
+    max-height: 150px !important; /* any size */
+    margin: auto;
+    border-radius: 100%;
+    position: relative;
+    background-size: 150px 150px;
+  }
+  .inner {
+    background-color: #075E54;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .camera-icon {
+    height: 30px;
+    width: 30px;
+    color: white;
+  }
+  ion-avatar { 
+    width: 100px;  
+    height: 100px;  
+    border: 4px solid #2159e6;
+    box-shadow: 0 0 0 3px #3dc2ff;
+}
+
+.img-wrapper {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    display: inline-block;
+    background: #99aadb;
+    border: 4px solid #99aadb;
+   &.male{
+        --background: url(../../../assets/imgs/avatar-male.jpg) 0 0/100% 100% no-repeat;
+        background: url(../../../assets/imgs/avatar-male.jpg) 0 0/100% 100% no-repeat;
+    }
+    &.female{
+      --background: url(../../../assets/imgs/avatar-female.jpg) 0 0/100% 100% no-repeat;
+      background: url(../../../assets/imgs/avatar-female.jpg) 0 0/100% 100% no-repeat;
+  }
+
+    img {
+      
+      height: 100%;
+      --background: #99aadb;
+      background: #99aadb;
+    }
+    
+
+}
+
+ion-item {
+  --border-color: var(--ion-color-light, #fff);
+}
+.step-text{
+  font-size: 12px;
+}
+.dots  {
+  span{
+  width: 10px;
+  height: 10px;
+  background: #dadada;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 10px;
+  &.done{
+    --background:var(--ion-color-primary);
+    background:var(--ion-color-primary);
+    --box-shadow: 2px 6px 6px 0 #c0def5;
+    box-shadow: 2px 6px 6px 0 #c0def5;
+  }
+  }
+}

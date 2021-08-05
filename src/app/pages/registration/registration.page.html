@@ -1,0 +1,185 @@
+<ion-content fullscreen>
+  <ion-toolbar class="ion-text-center">
+    <img class="icon" src="../../assets/imgs/logo-addroitt.svg" />
+    <div>
+      <ion-text class="ion-text-uppercase">Addroitt</ion-text>
+    </div>
+  </ion-toolbar>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 95.19">
+    <defs>
+      <style>
+        .cls-1 {
+          isolation: isolate;
+        }
+
+        .cls-2 {
+          fill: #fff;
+        }
+      </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Artboard_1" data-name="Artboard 1" class="cls-1">
+        <g id="Bg">
+          <path class="cls-2"
+            d="M0,0V95.19C3.06,74.9,24.71,56.8,51,56.8a61.09,61.09,0,0,1,27,6.11C84.5,28.49,124.32,2,172.5,2c51.14,0,92.88,29.83,95.38,67.33C278.4,59.25,293.6,52.92,310.5,52.92c21,0,39.36,9.78,49.4,24.37,12.71-7.22,30.49-11.72,50.19-11.72,33.05,0,62.19,12.64,69.91,29.62V0Z" />
+        </g>
+      </g>
+    </g>
+  </svg>
+  <div class="ion-padding intro-container ion-margin">
+    <div *ngIf="firstStep">
+      <h1>
+        <ion-text color="secondary" expand="block">Welcome!</ion-text> <br>
+        Create a New Account
+      </h1>
+      <form (ngSubmit)="register()" [formGroup]="credentials">
+
+        <div class="input-group ">
+          <ion-item>
+            <ion-input type="input" placeholder="Full Name" formControlName="student_name" required></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="input-group ">
+          <ion-item>
+            <ion-input placeholder="Mobile" type="numeric" formControlName="mobile_1" required></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="input-group ">
+          <ion-item>
+            <ion-input placeholder="email" type="email" formControlName="email" required></ion-input>
+          </ion-item>
+        </div>
+
+        <ion-item color="transparent" lines="none" class="ion-margin-bottom">
+          <ion-label color="light">I agree with the Terms and Conditions</ion-label>
+          <ion-toggle slot="start" name="apple" color="secondary" formControlName="termsAndCondition"></ion-toggle>
+        </ion-item>
+
+        <ion-button type="submit" color="light" expand="block" size="large" shape="round" class="ion-text-capitalize">
+          Submit</ion-button>
+
+        <!-- <ion-button type="submit" color="light" expand="block" size="large" shape="round" class="ion-text-capitalize"
+          (click)="sendOtp()">Submit</ion-button> -->
+      </form>
+    </div>
+
+
+
+    <div *ngIf="otpsent">
+      <h1>
+        <ion-text color="secondary" expand="block">OTP Verification</ion-text> <br>
+        Check your Message
+      </h1>
+      <p class="ion-padding-bottom">We have sent a OTP to your mobile Number <ion-text color="secondary">+91
+          {{user_list[0].mobile_1}}
+        </ion-text>
+      </p>
+      <form [formGroup]="credentials">
+        <div class="input-group ">
+          <ion-item>
+            <ion-input id="otp" placeholder="  *  *   *   *  "></ion-input>
+          </ion-item>
+        </div>
+
+        <p class="ion-text-center">Did’n’t recieve code ? </p>
+        <div class="ion-margin-bottom ion-text-center" color="transperant" lines="none">
+          <ion-button color="transperant" expand="block" size="small" shape="round" class="ion-text-capitalize">
+            <ion-text color="secondary" (click)="resendOtp(user_list[0].idstudent_details)">Resend OTP Again</ion-text>
+          </ion-button>
+        </div>
+
+        <!-- <ion-button type="submit" color="light" expand="block" size="large" shape="round" class="ion-text-capitalize">
+          Verify & Create Account</ion-button> -->
+
+        <ion-button color="light" expand="block" size="large" shape="round" class="ion-text-capitalize"
+          (click)="verifyOtp()">
+          Verify & Create Account</ion-button>
+      </form>
+    </div>
+
+
+    <div *ngIf="verification">
+      <h1>
+        <ion-text color="secondary" expand="block">Congratulation</ion-text> <br>
+        Create Your Password
+      </h1>
+      <div class="ion-margin-bottom">
+
+        <p class="ion-padding-bottom">Your Mobile Number is has beeb verified. Create password to login to Addroitt
+          App
+        </p>
+      </div>
+      <form (ngSubmit)="setPassword(user_list[0].idstudent_details)" [formGroup]="myform">
+        <div class="input-group ">
+          <ion-item>
+            <ion-input placeholder="Password" type="password" id="password" formControlName="password" required>
+            </ion-input>
+          </ion-item>
+        </div>
+        <div class="input-group ">
+          <ion-item>
+            <ion-input placeholder="Confirm Password" type="password" id="cpassword">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <ion-button type="submit" color="light" expand="block" size="large" shape="round" class="ion-text-capitalize">
+          Submit</ion-button>
+
+        <!-- <ion-button color="light" expand="block" size="large" shape="round" class="ion-text-capitalize"
+          (click)="password()">
+          Submit</ion-button> -->
+      </form>
+    </div>
+    <div *ngIf="passwordSet">
+      <h1>
+        <ion-text color="secondary" expand="block">Thank You</ion-text> <br>
+        Your Account Has Been Successfully Created.
+      </h1>
+      <div class="ion-margin-bottom">
+
+        <p>Compler Your Addroite Profile to..</p>
+      </div>
+      <div class="ion-margin-bottom">
+        <ion-item color="transparent" lines="none">
+          <ion-avatar slot="start">
+            <img src="../../../assets/imgs/rgst-icon1.png">
+          </ion-avatar>
+          <ion-label class="ion-text-wrap">
+            <ion-text color="light">
+              <h2>Build Resume to suite
+                your Domain Expertise</h2>
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item color="transparent" lines="none">
+          <ion-avatar slot="start">
+            <img src="../../../assets/imgs/rgst-icon2.png">
+          </ion-avatar>
+          <ion-label class="ion-text-wrap">
+            <ion-text color="light">
+              <h2>Personalize Skill Devlopment course certifications
+              </h2>
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item color="transparent" lines="none">
+          <ion-avatar slot="start">
+            <img src="../../../assets/imgs/rgst-icon3.png">
+          </ion-avatar>
+          <ion-label class="ion-text-wrap">
+            <ion-text color="light">
+              <h2>Increase Visibility to appropriate Employers</h2>
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <ion-button type="submit" color="light" expand="block" size="large" shape="round" class="ion-text-capitalize"
+        routerLink="/profile-form" routerDirection="root">
+        Login Now</ion-button>
+    </div>
+  </div>
+</ion-content>

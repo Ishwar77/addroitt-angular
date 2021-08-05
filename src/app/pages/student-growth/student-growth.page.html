@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border" color="primary" >
+  <ion-toolbar class="ion-padding-top">
+    <ion-text> <img class="logo"  src="../../assets/imgs/logo-w-addroitt.svg" /> </ion-text>
+   <ion-buttons slot="end">
+    <ion-button (click)="logout()">
+      <ion-icon color="light " name="log-out-outline"></ion-icon>
+    </ion-button>
+     <ion-button>
+       <ion-icon color="light " name="ellipsis-horizontal"></ion-icon>
+     </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="sinfo ">
+  <ion-item lines="none" class="ion-no-padding"> 
+    <ion-avatar slot="start" class="ion-margin-start">
+      <img src="../../assets/imgs/avatar.jpg" alt="">
+    </ion-avatar>
+    <ion-label color="medium">
+      <h2><ion-text color="light">Roopali K Sharma</ion-text></h2>
+      <p><ion-text color="secondary">Student</ion-text> </p>
+      <p>Computer Engineering</p>
+    </ion-label>
+  </ion-item> 
+</div>
+  <div class="ion-margin-bottom">
+    <!-- List Header Full Lines -->
+    <ion-card>
+      <img src="./madison.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>Destination</ion-card-subtitle>
+        <ion-card-title>Madison, WI</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

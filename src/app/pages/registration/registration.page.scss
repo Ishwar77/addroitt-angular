@@ -1,0 +1,36 @@
+ion-content{
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+    ion-toolbar{
+        height: 90px;
+        img{
+            width: 60px;
+            margin-top: 20px;
+        }
+        ion-text{
+            font-weight: 600;
+            font-size: 16px;
+            color:var(--ion-color-primary-shade);
+        }
+    }   
+    .intro-container{
+       
+        h1{
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        p{
+            color: var(--ion-color-primary-shade);
+        }
+    }
+    ion-button{
+        --box-shadow:none;
+      }
+      .input-group{
+          border: 1px solid #2159e6;
+      }
+      ion-avatar{
+      --border-radius:0;
+      }
+    
+}

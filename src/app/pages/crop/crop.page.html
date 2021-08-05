@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>crop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<image-cropper
+[imageBase64] = "myImage"
+[maintainAspectRatio]="myImage.aspectRatio ? true : false"
+[aspectRatio]="myImage.aspectRatio ? myImage.aspectRatio : 1"
+outputType = "base64"
+format="png"
+[resizeToWidth]="myImage.resizeTo ? myImage.resizeTo : 1200"
+(imageCropped) = "imageCropped($event)"
+></image-cropper>
+
+<img [src]="croppedImage" />
+<ion-button (click)="dismissModal()">Crop</ion-button>
+</ion-content>

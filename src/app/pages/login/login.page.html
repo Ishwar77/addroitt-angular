@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-toolbar class="ion-text-center">
+    <img class="icon" src="../../assets/imgs/logo-addroitt.svg" />
+    <p>
+      <ion-text class="ion-text-uppercase">Addroitt</ion-text>
+    </p>
+  </ion-toolbar>
+  <div class="ion-padding login-container ion-margin">
+
+    <form (ngSubmit)="login()" [formGroup]="credentials">
+      <div class="input-group">
+        <ion-item>
+          <ion-input type="input" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+      </div>
+      <!-- <div *ngIf="(email.dirty || email.touched) && email.errors" class="error">
+        <span *ngIf="email.errors?.requiered">Email is requiered</span>
+        <span *ngIf="email.errors?.email">Email is Invalid</span>
+      </div> -->
+      <div class="input-group">
+        <ion-item>
+          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+
+        </ion-item>
+
+      </div>
+      <p class="ion-text-end">
+        <ion-text color="primary">Forgot Password?</ion-text>
+      </p>
+      <!-- <div *ngIf="(password.dirty || password.touched) && password.errors" class="error">
+      <span *ngIf="password.errors?.requiered">Password is requiered</span>
+      <span *ngIf="password.errors?.minlength">Password need to be 6 characters</span>
+    </div> -->
+      <div class="button-group">
+        <ion-button type="submit" color="primary" expand="block" size="large" shape="round" class="ion-text-capitalize"
+          [disabled]="!credentials.valid">Login</ion-button>
+
+      </div>
+
+    </form>
+  </div>
+</ion-content>

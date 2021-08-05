@@ -1,0 +1,127 @@
+<ion-header class="ion-no-border" color="primary" >
+  <ion-toolbar class="ion-padding-top">
+    <ion-text> <img class="logo"  src="../../assets/imgs/logo-w-addroitt.svg" /> </ion-text>
+   <ion-buttons slot="end">
+    <ion-button (click)="logout()">
+      <ion-icon color="light " name="log-out-outline"></ion-icon>
+    </ion-button>
+     <ion-button>
+       <ion-icon color="light " name="ellipsis-horizontal"></ion-icon>
+     </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="sinfo ">
+  <ion-item lines="none" class="ion-padding-top"> 
+    <ion-avatar slot="start">
+      <img src="../../assets/imgs/avatar.jpg" alt="">
+    </ion-avatar>
+    <ion-label color="medium">
+      <h2><ion-text color="light">Roopali K Sharma</ion-text></h2>
+      <p><ion-text color="secondary">Student</ion-text> </p>
+      <p>Computer Engineering</p>
+      <p><ion-icon color="medium " name="location-outline"></ion-icon> Banglore, India</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none" class="uacton ion-margin-bottom">    
+    <ion-label color="medium">
+      <h4><ion-icon color="medium " name="call"></ion-icon> +91974259958</h4>
+    </ion-label>
+    <ion-label color="medium" slot="end">
+      <h4><ion-icon color="medium " name="trending-up"></ion-icon> Skill Growth</h4>
+    </ion-label>
+  </ion-item>
+  
+</div>
+  <div class="slides ion-margin-bottom">
+    <!-- List Header Full Lines -->
+<ion-list-header lines="full">
+  <ion-label class="ion-text-bold">New This Week</ion-label>
+  <ion-button>View All</ion-button>
+</ion-list-header>
+    <ion-slides [options]="slidesOptions" >
+      <ion-slide *ngFor="let skill of data?.articles" (click)="onGoToSkillSinglePage(skill);">
+        <ion-card lines="none">
+          <ion-card-header>
+            <div class="main">
+              <img src="../../assets/imgs/i-logo.jpg" alt="">
+            </div>            
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title color="light">{{skill.author}}</ion-card-title>
+            <ion-card-subtitle  color="light">
+                <img src="../../assets/imgs/completed-iocn.png" alt="">
+                <ion-text>A+ </ion-text> Grade 
+              </ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      <ion-slide>
+        <ion-card lines="none">
+          <ion-card-header>
+            <div class="main">
+              <img src="../../assets/imgs/i-logo.jpg" alt="">
+            </div>            
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title color="light">Awasome Title</ion-card-title>
+            <ion-card-subtitle  color="light">
+                <img src="../../assets/imgs/completed-iocn.png" alt="">
+                <ion-text>A+ </ion-text> Grade 
+              </ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      <ion-slide>
+        <ion-card lines="none">
+          <ion-card-header>
+            <div class="main">
+              <img src="../../assets/imgs/i-logo.jpg" alt="">
+            </div>            
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title color="light">Awasome Title</ion-card-title>
+            <ion-card-subtitle  color="light">
+                <img src="../../assets/imgs/completed-iocn.png" alt="">
+                <ion-text>A+ </ion-text> Grade 
+              </ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      <ion-slide>
+        <ion-card lines="none">
+          <ion-card-header>
+            <div class="main">
+              <img src="../../assets/imgs/i-logo.jpg" alt="">
+            </div>            
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title color="light">Awasome Title</ion-card-title>
+            <ion-card-subtitle  color="light">
+                <img src="../../assets/imgs/completed-iocn.png" alt="">
+                <ion-text>A+ </ion-text> Grade 
+              </ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      <ion-slide>
+        <ion-card lines="none">
+          <ion-card-header>
+            <div class="main">
+              <img src="../../assets/imgs/i-logo.jpg" alt="">
+            </div>            
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title color="light">Awasome Title</ion-card-title>
+            <ion-card-subtitle  color="light">
+                <img src="../../assets/imgs/completed-iocn.png" alt="">
+                <ion-text>A+ </ion-text> Grade 
+              </ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
